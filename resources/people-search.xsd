@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="people-search" type="people-searchType" />
+  <xsd:complexType name="people-searchType">
+    <xsd:sequence>
+      <xsd:element name="people" type="peopleType" />
+      <xsd:element name="num-results" type="xsd:int" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="peopleType">
+    <xsd:sequence>
+      <xsd:element maxOccurs="unbounded" name="person" type="personType" />
+    </xsd:sequence>
+    <xsd:attribute name="total" type="xsd:int" />
+    <xsd:attribute name="count" type="xsd:int" />
+    <xsd:attribute name="start" type="xsd:int" />
+  </xsd:complexType>
+  <xsd:complexType name="personType">
+    <xsd:sequence>
+      <xsd:element name="first-name" type="xsd:string" minOccurs ="0" nillable="true"/>
+      <xsd:element name="last-name" type="xsd:string" minOccurs ="0" nillable="true"/>
+      <xsd:element name="location" type="locationType" minOccurs="0"/>
+      <xsd:element name="three-current-positions" type="three-current-positionsType" minOccurs ="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="three-current-positionsType">
+    <xsd:sequence>
+      <xsd:element name="position" type="positionType" minOccurs ="0" maxOccurs ="3"/>
+    </xsd:sequence>
+    <xsd:attribute name="total" type="xsd:int" />
+  </xsd:complexType>
+  <xsd:complexType name="positionType">
+    <xsd:sequence>
+      <xsd:element name="company" type="companyType" minOccurs ="0"/>
+      <xsd:element name="title" type="xsd:string" minOccurs ="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="companyType">
+    <xsd:sequence>
+      <xsd:element name="id" type="xsd:int" minOccurs ="0"/>
+      <xsd:element name="name" type="xsd:string" minOccurs ="0"/>
+	  <xsd:element name="size" type="xsd:string" minOccurs ="0"/>
+      <xsd:element name="type" type="xsd:string" minOccurs ="0"/>
+      <xsd:element name="industry" type="xsd:string" minOccurs ="0"/>
+      <xsd:element name="ticker" type="xsd:string" minOccurs ="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="locationType">
+    <xsd:sequence>
+      <xsd:element name="name" type="xsd:string" minOccurs ="0"/>
+      <xsd:element name="country" type="countryType" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="countryType">
+    <xsd:sequence>
+      <xsd:element name="code" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

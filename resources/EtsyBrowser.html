@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="CoffeeCup HTML Editor (www.coffeecup.com)">
+  <meta name="dcterms.created" content="Tue, 30 Dec 2014 04:07:57 GMT">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <title>Order #$Order_Id$ detaiils</title>
+<link rel="stylesheet" type="text/css" href="./EtsyBrowser.css" media="screen" />
+</head>
+<body>
+<h2>Order #$Order_Id$ details on $Order_Date$</h2>
+
+<!--style>
+.borderexample
+{
+border-style:solid;
+border-color:#287EC7;
+} 
+</style-->
+<table cellspacing="3" class="bordered">
+  <tr>
+  <th>
+    <b><font size="4">Buyer Information</font></b>
+  </th>
+  </tr>
+  <tbody>
+    <tr>
+    
+      <td><font size="3"><b>dayzeegal<br></b></font>
+	  <b>ran131@hotmail.com<br></b>
+      Ship To
+      Miranda Esposito
+      79 Schuyler Dr&nbsp;&nbsp;<br>
+      Edison, NJ 08817<br>
+      United States</td>
+      
+    </tr>
+  </tbody>
+</table>
+
+<br><br>
+
+<table cellspacing="3" class="bordered">
+  <tr>
+    <th width="60%">
+      	<b><font size="4">Item Details</font></b>
+    </th>
+	<th width="40%">
+    	<b><font size="4">Item total</font></b>
+  	</th>
+  </tr>
+  <tbody>
+  <tr>
+    <td width="60%">$Item_Description$<br>
+    </td>
+    <td width="40%">$Item_Total_Price$<br>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+<br><br>
+
+<table cellspacing="3" class="bordered">
+  <tr>
+    <th>
+      	<b><font size="4">Note From Buyer</font></b>
+    </th>
+  </tr>
+  <tbody>
+  <tr>
+  	  <td colspan="2">Initials 'C' & 'N'<br>
+	Can you do them in lowercase?<br>
+	  </td>
+  </tr>
+  </tbody>
+</table>
+
+<br><br>
+
+<table cellspacing="3" class="bordered">
+  <tr>
+    <th>
+      	<b><font size="4">Private Note</font></b>
+    </th>
+  </tr>
+  
+<tbody>
+  <tr>
+    <td>
+	<textarea id="private_note" rows="5" cols="60">Karine's private note ...
+    </textarea><br>
+    <br>
+    <button onclick="myFunction()">Submit</button>
+	</td>
+  </tr>
+</tbody>
+</table>
+
+<script>
+var toggle = 0;
+function myFunction(){
+  if(toggle == 0)
+  {
+  	document.getElementById("private_note").innerHTML = "Karine CARBEL is the best!";
+	toggle = 1;
+  }
+  else
+  {
+  	document.getElementById("private_note").innerHTML = "Karine's private note ...";
+	toggle = 0;
+  }
+}
+</script>
+</body>
+</html>
